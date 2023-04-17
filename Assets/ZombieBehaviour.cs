@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieBehaviour : MonoBehaviour
 {
     int hp = 10;
 
     GameObject player;
+    NavMeshAgent agent;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -18,14 +22,20 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if(hp> 0)
         {
-            transform.LookAt(player.transform.position);
+            //transform.LookAt(player.transform.position);
             //Vector3 playerDirection = transform.position - player.transform.position;
 
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            //transform.Translate(Vector3.forward * Time.deltaTime);
+
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.speed = 0;
         }
         
     }
-   /* private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
@@ -36,24 +46,8 @@ public class ZombieBehaviour : MonoBehaviour
                 transform.Translate(Vector3.up);
                 transform.Rotate(Vector3.right * -90);
                 GetComponent<BoxCollider>().enabled = false;
-                Destroy(transform.gameObject, 10);
+                Destroy(transform.gameObject, 5);
             }
         }
-   */
-         private void OnCollisionEnter(Collision collision)
-    {
-        GameObject other = collision.gameObject;
-        if(other.CompareTag("Bullet"))
-        {
-            // zderzyliœmy siê z pociskiem - usuñ pocisk i asteroidê z gry
-
-            //zniszcz pocisk
-            Destroy(other);
-
-            //zniszcz asteroide
-            
-            Destroy(gameObject);
-        }
     }
-        
-    }
+}

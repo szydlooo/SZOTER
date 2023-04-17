@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B661EF2C-B92B-17D5-8BE0-B69A0AA637FD}</ProjectGuid>
+    <ProjectGuid>{95503F90-C85F-B1A1-4782-D2AD2887A924}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,9 +56,11 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Spawner.cs" />
     <Compile Include="Assets\ZombieBehaviour.cs" />
+    <Compile Include="Assets\LevelManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -760,11 +762,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{079972D5-75A7-0F93-94C7-2F51FD843BEF}</Project>
+      <Project>{95ABDC9D-F861-79D7-AD40-36EA5C5A50C4}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{678F8A0B-DD81-9E5F-24F0-2900FDC5B88E}</Project>
+      <Project>{0D813709-1CC4-3D57-AF52-61C3B2AD520E}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
