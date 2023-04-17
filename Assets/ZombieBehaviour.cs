@@ -25,7 +25,7 @@ public class ZombieBehaviour : MonoBehaviour
         }
         
     }
-    private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
@@ -39,5 +39,21 @@ public class ZombieBehaviour : MonoBehaviour
                 Destroy(transform.gameObject, 10);
             }
         }
+   */
+         private void OnCollisionEnter(Collision collision)
+    {
+        GameObject other = collision.gameObject;
+        if(other.CompareTag("Bullet"))
+        {
+            // zderzyliœmy siê z pociskiem - usuñ pocisk i asteroidê z gry
+
+            //zniszcz pocisk
+            Destroy(other);
+
+            //zniszcz asteroide
+            
+            Destroy(gameObject);
+        }
     }
-}
+        
+    }

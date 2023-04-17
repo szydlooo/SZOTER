@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\Spawner.cs" />
     <Compile Include="Assets\ZombieBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
